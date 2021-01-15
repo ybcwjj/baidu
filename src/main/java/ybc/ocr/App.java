@@ -4,6 +4,8 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -125,6 +127,21 @@ public class App {
         }
     }
 
+    
+    /**
+     * B方法追加文件：使用FileWriter
+     */
+    public static void appendFileContent(String fileName, String content) {
+        try {
+            //打开一个写文件器，构造函数中的第二个参数true表示以追加形式写文件,如果为 true，则将字节写入文件末尾处，而不是写入文件开始处 
+            FileWriter writer = new FileWriter(fileName, true);
+            writer.write(content);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
     /**
      * 获取格式化后的时间信息
      *
@@ -158,8 +175,8 @@ public class App {
         client.setConnectionTimeoutInMillis(20000);
         client.setSocketTimeoutInMillis(60000);
      
-      //  JSONObject json= client.general("f:\\微信图片_20190626102629.jpg", new HashMap<String, String>());
-        JSONObject json= client.accurateGeneral("f:\\微信图片_20190626102629.jpg", new HashMap<String, String>());
+     /* //  JSONObject json= client.general("f:\\微信图片_20190626102629.jpg", new HashMap<String, String>());
+        JSONObject json= client.accurateGeneral("D:\\1.png", new HashMap<String, String>());
         JSONArray jsonArray = json.getJSONArray("words_result");
         List<String> wordsList = new ArrayList<>();
         StringBuilder wordsB = new StringBuilder();
@@ -171,10 +188,10 @@ public class App {
              
         }
         System.out.println(wordsList);
-        System.out.println(wordsB);
-      /*  // 读取pdf文件
-        String path = "F:\\SAN与NAS的区别.pdf";
-        pdfParse(path);*/
+        System.out.println(wordsB);*/
+      // 读取pdf文件
+        String path = "D:\\第7章 项目质量管理2.0.pdf";
+        pdfParse(path); 
 
     }
 

@@ -100,7 +100,7 @@ public class AppSpeech {
         
          HashMap<String,Object> map = new HashMap<String, Object>();
       //  map.put("dev_pid", "1737");
-        
+/*        
       //合成的MP3语音文件
       		String path = "f:\\201972310339.mp3";
       		//MP3转pcm要保存的路径和文件名
@@ -110,10 +110,10 @@ public class AppSpeech {
         
         // 调用接口
         JSONObject res = client.asr("f:/16k.pcm", "pcm", 16000,map);
-        System.out.println(res.toString(2));
+        System.out.println(res.toString(2));*/
      
-     /* //  JSONObject json= client.general("f:\\微信图片_20190626102629.jpg", new HashMap<String, String>());
-        JSONObject json= client.accurateGeneral("f:\\微信图片_20190626102629.jpg", new HashMap<String, String>());
+      //  JSONObject json= client.general("f:\\微信图片_20190626102629.jpg", new HashMap<String, String>());
+        JSONObject json= client.general("f:\\微信图片_20190626102629.jpg", new HashMap<String, String>());
         JSONArray jsonArray = json.getJSONArray("words_result");
         List<String> wordsList = new ArrayList<>();
         StringBuilder wordsB = new StringBuilder();
@@ -125,7 +125,7 @@ public class AppSpeech {
              
         }
         System.out.println(wordsList);
-        System.out.println(wordsB);*/
+        System.out.println(wordsB);
       /*  // 读取pdf文件
         String path = "F:\\SAN与NAS的区别.pdf";
         pdfParse(path);*/
